@@ -20,31 +20,6 @@ function VerifyBarcode({ selectedOrder, orders, onSelectOrder, onToggleReadyForB
 
   return (
     <div className="diag-verify-page">
-      {/* Top Action Header Bar */}
-      <div className="diag-action-bar">
-        <button className="diag-btn-clear" onClick={onBackToSearch} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-          ← Back to Search Queue
-        </button>
-
-        {/* Quick Order Selector */}
-        {orders && orders.length > 1 && (
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <select
-              className="diag-select"
-              style={{ width: 'auto', padding: '0.4rem 0.75rem', fontWeight: 600, borderRadius: '8px', border: '1px solid #cbd5e1' }}
-              value={id}
-              onChange={(e) => onSelectOrder(e.target.value)}
-            >
-              {orders.map((o) => (
-                <option key={o.id} value={o.id}>
-                  {o.id} - {o.patientName} ({o.status})
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-      </div>
-
       {/* 3 Top Summary Legend Cards - Matching Pill Cap Card Design */}
       <div className="diag-legend-grid">
         {/* Lavender Cap Card */}

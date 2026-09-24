@@ -27,38 +27,6 @@ function LabOrdersPrint({ selectedOrder, orders, onSelectOrder, onBackToSearch }
 
   return (
     <div className="diag-print-page">
-      {/* Top Action Bar (hidden when printing) */}
-      <div className="diag-action-bar no-print">
-        <button className="diag-btn-clear" onClick={onBackToSearch} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-          ← Back to Search Queue
-        </button>
-
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-          {orders && orders.length > 1 && (
-            <select
-              className="diag-select"
-              style={{ width: 'auto', padding: '0.4rem 0.75rem' }}
-              value={id}
-              onChange={(e) => onSelectOrder(e.target.value)}
-            >
-              {orders.map((o) => (
-                <option key={o.id} value={o.id}>
-                  {o.id} - {o.patientName}
-                </option>
-              ))}
-            </select>
-          )}
-
-          <button className="diag-btn-clear" onClick={() => setShowPdfModal(true)} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-            📥 Download PDF
-          </button>
-
-          <button className="diag-btn-search" onClick={handlePrint} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-            🖨️ Print Requisition
-          </button>
-        </div>
-      </div>
-
       {/* Printable Sheet Card */}
       <div className="diag-print-paper">
         {/* Slip Header */}
@@ -75,6 +43,14 @@ function LabOrdersPrint({ selectedOrder, orders, onSelectOrder, onBackToSearch }
           <div style={{ textAlign: 'right', fontSize: '0.85rem', color: '#475569' }}>
             <div><strong>Spoke Center:</strong> Spoke-04 Intakes</div>
             <div><strong>Requisition Date:</strong> {date || new Date().toLocaleString()}</div>
+            <div className="no-print" style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
+              <button className="diag-btn-clear" onClick={() => setShowPdfModal(true)} style={{ padding: '0.3rem 0.6rem', fontSize: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                📥 Download PDF
+              </button>
+              <button className="diag-btn-search" onClick={handlePrint} style={{ padding: '0.3rem 0.6rem', fontSize: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                🖨️ Print Requisition
+              </button>
+            </div>
           </div>
         </div>
 
