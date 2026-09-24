@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Government LIMS Login Page Styling
+   ========================================================================== */
+
+.lims-login-container {
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: forestgreen;
+  padding: 2rem 1rem;
+  font-family: var(--font-sans);
+}
+
+.lims-login-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  overflow: hidden;
+}
+
+.lims-login-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #008744;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.lims-login-seal {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.lims-login-title {
+  color: #005a9e;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.lims-login-subtitle {
+  color: #0070c0;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 2px 0 0 0;
+}
+
+.lims-login-dept {
+  color: #64748b;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.lims-login-form {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.lims-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.lims-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.lims-form-group input,
+.lims-form-group select {
+  padding: 0.65rem 0.85rem;
+  font-size: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.lims-form-group input:focus,
+.lims-form-group select:focus {
+  border-color: #008744;
+  box-shadow: 0 0 0 3px rgba(0, 135, 68, 0.12);
+}
+
+.lims-login-btn {
+  background-color: #008744;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.lims-login-btn:hover {
+  background-color: #007038;
+}
+
+.lims-demo-box {
+  background-color: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.lims-demo-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.lims-demo-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lims-demo-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 0.45rem 0.75rem;
+  font-size: 11px;
+  font-weight: 600;
+  color: #334155;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lims-demo-btn:hover {
+  border-color: #008744;
+  color: #008744;
+  background-color: #f0fdf4;
+}
+
+.lims-error-alert {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}

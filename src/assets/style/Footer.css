@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Government LIMS Footer Styles
+   ========================================================================== */
+
+.lims-footer {
+  background-color: #ffffff;
+  color: #334155;
+  padding: 1.25rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  border-top: 2px solid #000000;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+.lims-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.lims-footer-dept {
+  font-weight: 700;
+  color: #005a9e;
+  font-size: 13px;
+}
+
+.lims-footer-copy {
+  margin-top: 0.2rem;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.lims-footer-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.lims-footer-link {
+  color: #0070c0;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.lims-footer-link:hover {
+  color: #008744;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .lims-footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}

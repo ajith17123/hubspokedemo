@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Government LIMS Header & Navbar Styles
+   ========================================================================== */
+
+/* Top White Header Container */
+.lims-top-header {
+  background-color: #ffffff;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #000000;
+  font-family: var(--font-sans);
+  box-sizing: border-box;
+}
+
+/* Left Emblem Seal Logo */
+.lims-emblem-box {
+  display: flex;
+  align-items: center;
+}
+
+.lims-emblem-seal {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid #008744;
+  padding: 2px;
+}
+
+/* Center Department Titles */
+.lims-header-center {
+  text-align: center;
+  flex: 1;
+}
+
+.lims-header-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #005a9e;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.lims-header-city {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0070c0;
+  margin: 1px 0;
+}
+
+.lims-header-dept {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  margin: 1px 0;
+}
+
+.lims-header-gov {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Right User & Branch Meta */
+.lims-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  font-size: 12px;
+  color: #334155;
+}
+
+.lims-branch-tag {
+  font-weight: 700;
+}
+
+.lims-branch-name {
+  color: #d97706;
+  font-weight: 800;
+}
+
+.lims-user-welcome {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lims-user-name {
+  color: #008744;
+  font-weight: 700;
+}
+
+.lims-header-date {
+  color: #008744;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* Bottom Green Navbar Container */
+.lims-navbar {
+  background-color: #008744;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  font-family: var(--font-sans);
+  position: relative;
+  z-index: 500;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  overflow: visible !important;
+}
+
+.lims-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.lims-nav-item {
+  position: relative;
+}
+
+.lims-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0.75rem 1.1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.lims-nav-link:hover,
+.lims-nav-link.active,
+.lims-dropdown-toggle:hover {
+  background-color: #007038;
+}
+
+.lims-nav-link.active-highlight {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+/* Dropdown Menu Component */
+.lims-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #007038;
+  min-width: 210px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 2px solid #000000;
+  border-radius: 0 0 6px 6px;
+  padding: 0.4rem 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease-in-out;
+  overflow: visible;
+}
+
+.lims-dropdown-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0.65rem 1rem;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.lims-dropdown-item:hover {
+  background-color: #00562b;
+  color: #fef08a;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .lims-top-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .lims-header-right {
+    align-items: center;
+  }
+
+  .lims-navbar {
+    overflow: visible !important;
+    padding: 0 0.5rem;
+  }
+
+  .lims-nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  .lims-nav-link {
+    padding: 0.55rem 0.65rem;
+    font-size: 12px;
+  }
+
+  .lims-dropdown-menu {
+    min-width: 190px;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 480px) {
+  .lims-dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+  }
+}

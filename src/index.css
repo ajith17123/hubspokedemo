@@ -1,0 +1,265 @@
+:root {
+  /* =========================================
+     Font Families
+     ========================================= */
+  --font-serif: "Times New Roman", Times, Baskerville, Georgia, serif;
+  --font-sans: "Segoe UI", Arial, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* =========================================
+     Colors: Primary & Secondary Brand
+     ========================================= */
+  --color-primary-green: #008744;
+  --color-primary-green-alt: #009647;
+  --color-secondary-green: #4caf50;
+  --color-mint-light: #d4edda;
+  
+  --color-title-blue: #005a9e;
+  --color-accent-blue: #0070c0;
+  --color-cyan: #00a3e0;
+  --color-link-blue: #0d6efd;
+
+  /* =========================================
+     Colors: Status & Accents
+     ========================================= */
+  --color-warning-amber: #f1b434;
+  --color-warning-yellow: #ffc107;
+
+  /* =========================================
+     Colors: Neutrals & Surfaces
+     ========================================= */
+  --color-white: #ffffff;
+  --color-surface-light: #f8f9fa;
+  --color-border-light: #e0e0e0;
+  --color-border-medium: #cccccc;
+  
+  --color-text-main: #212529;
+  --color-text-charcoal: #2b2b2b;
+  --color-text-muted: #333333;
+  --color-black: #000000;
+
+  /* =========================================
+     Font Sizes: Application / UI Scale
+     ========================================= */
+  --font-size-ui-table-data: 11px;
+  --font-size-ui-table-cell: 12px;
+  --font-size-ui-label: 13px;
+  --font-size-ui-nav: 14px;
+  --font-size-ui-section-title: 16px;
+  --font-size-ui-brand-title: 20px;
+
+  /* =========================================
+     Font Sizes: Presentation / Slide Scale
+     ========================================= */
+  --font-size-slide-footer: 13px;
+  --font-size-slide-body: 20px;
+  --font-size-slide-subtitle: 20px;
+  --font-size-slide-subheading: 24px;
+  --font-size-slide-title: 30px;
+
+  /* =========================================
+     Typography Weights
+     ========================================= */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: forestgreen;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: var(--font-sans);
+  --heading: var(--font-sans);
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--color-text-main);
+  background: forestgreen;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: forestgreen;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: forestgreen !important;
+}
+
+/* Global Mobile Scrollbar Hiding & Clean Touch Scrolling */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
+  }
+
+  * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .no-scrollbar::-webkit-scrollbar,
+  .fd-table-wrapper::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .no-scrollbar,
+  .fd-table-wrapper {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+}
+
+#root {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: forestgreen;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* =========================================
+   Global Action Button High-Contrast Rules
+   ========================================= */
+button {
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+/* Primary Green & Blue Action Buttons */
+.fd-submit-btn,
+.fd-btn-primary,
+.hub-primary-button {
+  background-color: #008744 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fd-submit-btn:hover,
+.fd-btn-primary:hover,
+.hub-primary-button:hover {
+  background-color: #007038 !important;
+  color: #ffffff !important;
+}
+
+/* Secondary Action Buttons */
+.fd-btn-secondary,
+.hub-secondary-button {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid #cbd5e1 !important;
+  font-weight: 600;
+}
+
+.fd-btn-secondary:hover,
+.hub-secondary-button:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Table Cell Action Buttons */
+td button,
+.cons-table button:not([style*="background: none"]) {
+  font-weight: 700;
+}
+
