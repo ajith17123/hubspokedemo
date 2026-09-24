@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import React from 'react';
 import 'aos/dist/aos.css';
@@ -17,6 +17,33 @@ import Reports from './components/Reports';
 import PublicReportView from './pages/PublicReportView';
 import AccessDenied from './pages/AccessDenied';
 
+function AppContent() {
+  const location = useLocation();
+  const isLoginPage = location.pathname.toLowerCase() === '/login';
+
+  return (
+    <>
+      {!isLoginPage && <Navbar />}
+      <main style={{ flex: 1, minHeight: isLoginPage ? '100vh' : 'calc(100vh - 160px)', backgroundColor: 'forestgreen' }}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/front_desk/*" element={<Front_Desk />} />
+          <Route path="/diagnostics/*" element={<Diagnostics />} />
+          <Route path="/Consignment/*" element={<Consignment />} />
+          <Route path="/Hub/*" element={<Hub />} />
+          <Route path="/pathologist/*" element={<Pathologist />} />
+          <Route path="/reports/*" element={<Reports />} />
+          <Route path="/report/:reportId" element={<PublicReportView />} />
+          <Route path="/access-denied" element={<AccessDenied />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      </main>
+      {!isLoginPage && <Footer />}
+    </>
+  );
+}
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -27,23 +54,7 @@ function App() {
 
   return (
     <HashRouter>
-      <Navbar />
-      <main style={{ flex: 1, minHeight: 'calc(100vh - 160px)', backgroundColor: 'forestgreen' }}>
-        <Routes>
-          <Route path="/" element={<Front_Desk />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/front_desk/*" element={<Front_Desk />} />
-          <Route path="/diagnostics/*" element={<Diagnostics />} />
-          <Route path="/Consignment/*" element={<Consignment />} />
-          <Route path="/Hub/*" element={<Hub />} />
-          <Route path="/pathologist/*" element={<Pathologist />} />
-          <Route path="/reports/*" element={<Reports />} />
-          <Route path="/report/:reportId" element={<PublicReportView />} />
-          <Route path="/access-denied" element={<AccessDenied />} />
-          <Route path="*" element={<Front_Desk />} />
-        </Routes>
-      </main>
-      <Footer />
+      <AppContent />
     </HashRouter>
   );
 }

@@ -611,6 +611,84 @@
   margin-bottom: 1rem;
 }
 
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 768px) {
+  .diag-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .diag-header-banner {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .diag-nav-tabs {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .diag-tab-btn {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .diag-filter-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .diag-btn-group {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+
+  .diag-patient-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .diag-patient-banner-info {
+    gap: 0.75rem;
+  }
+
+  .diag-print-paper {
+    padding: 1.25rem 1rem;
+  }
+
+  .diag-print-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diag-action-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .diag-container {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .diag-portal-title {
+    font-size: 1.15rem;
+  }
+
+  .diag-legend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diag-btn-search,
+  .diag-btn-clear {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Media Print Rules */
 @media print {
   body {
@@ -633,3 +711,4 @@
     max-width: 100% !important;
   }
 }
+

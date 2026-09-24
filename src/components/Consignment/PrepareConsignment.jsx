@@ -53,7 +53,7 @@ export default function PrepareConsignment({ onTransferSuccess }) {
       )}
 
       <div className="cons-card">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <div className="cons-header-row">
           <div>
             <h3 style={{ margin: 0, color: '#005a9e', fontSize: '15px' }}>
               Samples Verified & Ready for Consignment Packaging
@@ -72,72 +72,74 @@ export default function PrepareConsignment({ onTransferSuccess }) {
           </button>
         </div>
 
-        <table className="cons-table">
-          <thead>
-            <tr>
-              <th style={{ width: '40px' }}>
-                <button
-                  type="button"
-                  onClick={toggleSelectAll}
-                  style={{ background: 'none', border: 'none', cursor: 'pointer' }}
-                >
-                  {selectedBarcodes.length === readySamples.length && readySamples.length > 0 ? (
-                    <CheckSquare size={16} color="#008744" />
-                  ) : (
-                    <Square size={16} color="#64748b" />
-                  )}
-                </button>
-              </th>
-              <th>Sample Barcode</th>
-              <th>Patient Name & ID</th>
-              <th>Lab Order ID</th>
-              <th>Tube / Specimen Type</th>
-              <th>Tests Included</th>
-              <th>Verification Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {readySamples.length > 0 ? (
-              readySamples.map((s) => {
-                const isSelected = selectedBarcodes.includes(s.barcode);
-                return (
-                  <tr key={s.barcode} style={{ backgroundColor: isSelected ? '#f0fdf4' : 'inherit' }}>
-                    <td>
-                      <button
-                        type="button"
-                        onClick={() => toggleSelect(s.barcode)}
-                        style={{ background: 'none', border: 'none', cursor: 'pointer' }}
-                      >
-                        {isSelected ? <CheckSquare size={16} color="#008744" /> : <Square size={16} color="#64748b" />}
-                      </button>
-                    </td>
-                    <td><strong style={{ color: '#0070c0' }}>{s.barcode}</strong></td>
-                    <td>
-                      <div><strong>{s.patientName}</strong></div>
-                      <div style={{ fontSize: '11px', color: '#64748b' }}>{s.patientId}</div>
-                    </td>
-                    <td>{s.labOrderId}</td>
-                    <td>
-                      <span className={`fd-tube-tag fd-tube-${s.tubeCategory || 'red'}`}>
-                        {s.tubeType}
-                      </span>
-                    </td>
-                    <td>{(s.tests || []).join(', ')}</td>
-                    <td>
-                      <span style={{ color: '#008744', fontWeight: 'bold' }}>✓ Verified</span>
-                    </td>
-                  </tr>
-                );
-              })
-            ) : (
+        <div className="cons-table-wrapper">
+          <table className="cons-table">
+            <thead>
               <tr>
-                <td colSpan="7" style={{ textAlign: 'center', padding: '2rem', color: '#94a3b8' }}>
-                  No verified samples ready for consignment dispatch.
-                </td>
+                <th style={{ width: '40px' }}>
+                  <button
+                    type="button"
+                    onClick={toggleSelectAll}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    {selectedBarcodes.length === readySamples.length && readySamples.length > 0 ? (
+                      <CheckSquare size={16} color="#008744" />
+                    ) : (
+                      <Square size={16} color="#64748b" />
+                    )}
+                  </button>
+                </th>
+                <th>Sample Barcode</th>
+                <th>Patient Name & ID</th>
+                <th>Lab Order ID</th>
+                <th>Tube / Specimen Type</th>
+                <th>Tests Included</th>
+                <th>Verification Status</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {readySamples.length > 0 ? (
+                readySamples.map((s) => {
+                  const isSelected = selectedBarcodes.includes(s.barcode);
+                  return (
+                    <tr key={s.barcode} style={{ backgroundColor: isSelected ? '#f0fdf4' : 'inherit' }}>
+                      <td>
+                        <button
+                          type="button"
+                          onClick={() => toggleSelect(s.barcode)}
+                          style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                        >
+                          {isSelected ? <CheckSquare size={16} color="#008744" /> : <Square size={16} color="#64748b" />}
+                        </button>
+                      </td>
+                      <td><strong style={{ color: '#0070c0' }}>{s.barcode}</strong></td>
+                      <td>
+                        <div><strong>{s.patientName}</strong></div>
+                        <div style={{ fontSize: '11px', color: '#64748b' }}>{s.patientId}</div>
+                      </td>
+                      <td>{s.labOrderId}</td>
+                      <td>
+                        <span className={`fd-tube-tag fd-tube-${s.tubeCategory || 'red'}`}>
+                          {s.tubeType}
+                        </span>
+                      </td>
+                      <td>{(s.tests || []).join(', ')}</td>
+                      <td>
+                        <span style={{ color: '#008744', fontWeight: 'bold' }}>✓ Verified</span>
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <tr>
+                  <td colSpan="7" style={{ textAlign: 'center', padding: '2rem', color: '#94a3b8' }}>
+                    No verified samples ready for consignment dispatch.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

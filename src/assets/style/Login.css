@@ -3,13 +3,14 @@
    ========================================================================== */
 
 .lims-login-container {
-  min-height: calc(100vh - 180px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: forestgreen;
   padding: 2rem 1rem;
   font-family: var(--font-sans);
+  box-sizing: border-box;
 }
 
 .lims-login-card {
@@ -102,7 +103,7 @@
   font-size: 14px;
   font-weight: 700;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: pointer !important;
   transition: background-color 0.2s;
   margin-top: 0.5rem;
 }
@@ -140,7 +141,7 @@
   font-weight: 600;
   color: #334155;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: pointer !important;
   transition: all 0.15s;
   text-align: left;
   display: flex;
@@ -163,3 +164,16 @@
   font-size: 12px;
   font-weight: 500;
 }
+
+@media (max-width: 480px) {
+  .lims-login-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .lims-login-header,
+  .lims-login-form,
+  .lims-demo-box {
+    padding: 1rem;
+  }
+}
+

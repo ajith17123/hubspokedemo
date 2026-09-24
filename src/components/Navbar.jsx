@@ -59,16 +59,19 @@ function Navbar() {
     setActiveDropdown(prev => prev === name ? null : name);
   };
 
-  const openDropdownOnHover = (name) => {
-    setActiveDropdown(name);
-  };
-
   return (
     <header style={{ width: '100%' }} ref={navbarRef}>
       {/* Top White Header Banner */}
       <div className="lims-top-header">
         {/* Left: Government Seal Emblem Logo */}
-        <div className="lims-emblem-box">
+        <div
+          className="lims-emblem-box"
+          onClick={() => navigate('/front_desk/new_patient')}
+          style={{ cursor: 'pointer' }}
+          title="Go to New Patient Registration"
+          role="button"
+          tabIndex={0}
+        >
           <svg className="lims-emblem-seal" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="46" fill="#f8fafc" stroke="#008744" strokeWidth="4"/>
             <circle cx="50" cy="50" r="38" fill="none" stroke="#d97706" strokeWidth="2" strokeDasharray="4 2"/>
@@ -137,14 +140,13 @@ function Navbar() {
               className={`lims-nav-link lims-dropdown-toggle ${location.pathname.startsWith('/front_desk') ? 'active-highlight' : ''}`}
               style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               onClick={() => toggleDropdown('front_desk')}
-              onMouseEnter={() => openDropdownOnHover('front_desk')}
             >
               Front Desk
               <ChevronDown size={14} style={{ transform: activeDropdown === 'front_desk' ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </button>
 
             {activeDropdown === 'front_desk' && (
-              <div className="lims-dropdown-menu" onMouseLeave={() => setActiveDropdown(null)}>
+              <div className="lims-dropdown-menu">
                 <div className="lims-dropdown-item" onClick={() => handleDropdownAction('/front_desk/new_patient')}>
                   New Patient Registration
                 </div>
@@ -171,14 +173,13 @@ function Navbar() {
               className={`lims-nav-link lims-dropdown-toggle ${location.pathname.startsWith('/diagnostics') ? 'active-highlight' : ''}`}
               style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               onClick={() => toggleDropdown('diagnostics')}
-              onMouseEnter={() => openDropdownOnHover('diagnostics')}
             >
               Diagnostics
               <ChevronDown size={14} style={{ transform: activeDropdown === 'diagnostics' ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </button>
 
             {activeDropdown === 'diagnostics' && (
-              <div className="lims-dropdown-menu" onMouseLeave={() => setActiveDropdown(null)}>
+              <div className="lims-dropdown-menu">
                 <div className="lims-dropdown-item" onClick={() => handleDropdownAction('/diagnostics/search_lab_orders')}>
                   Search Lab Orders
                 </div>
@@ -202,14 +203,13 @@ function Navbar() {
               className={`lims-nav-link lims-dropdown-toggle ${location.pathname.toLowerCase().startsWith('/consignment') ? 'active-highlight' : ''}`}
               style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               onClick={() => toggleDropdown('consignments')}
-              onMouseEnter={() => openDropdownOnHover('consignments')}
             >
               Consignments
               <ChevronDown size={14} style={{ transform: activeDropdown === 'consignments' ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </button>
 
             {activeDropdown === 'consignments' && (
-              <div className="lims-dropdown-menu" onMouseLeave={() => setActiveDropdown(null)}>
+              <div className="lims-dropdown-menu">
                 <div className="lims-dropdown-item" onClick={() => handleDropdownAction('/Consignment/create')}>
                   Prepare & Create Consignment
                 </div>
@@ -227,14 +227,13 @@ function Navbar() {
               className={`lims-nav-link lims-dropdown-toggle ${location.pathname.toLowerCase().startsWith('/hub') ? 'active-highlight' : ''}`}
               style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               onClick={() => toggleDropdown('hub')}
-              onMouseEnter={() => openDropdownOnHover('hub')}
             >
               Hub
               <ChevronDown size={14} style={{ transform: activeDropdown === 'hub' ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </button>
 
             {activeDropdown === 'hub' && (
-              <div className="lims-dropdown-menu" onMouseLeave={() => setActiveDropdown(null)}>
+              <div className="lims-dropdown-menu">
                 <div className="lims-dropdown-item" onClick={() => handleDropdownAction('/Hub/incoming')}>
                   Incoming Consignments
                 </div>
@@ -261,14 +260,13 @@ function Navbar() {
               className={`lims-nav-link lims-dropdown-toggle ${location.pathname.startsWith('/pathologist') ? 'active-highlight' : ''}`}
               style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               onClick={() => toggleDropdown('pathologist')}
-              onMouseEnter={() => openDropdownOnHover('pathologist')}
             >
               Pathologist
               <ChevronDown size={14} style={{ transform: activeDropdown === 'pathologist' ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </button>
 
             {activeDropdown === 'pathologist' && (
-              <div className="lims-dropdown-menu" onMouseLeave={() => setActiveDropdown(null)}>
+              <div className="lims-dropdown-menu">
                 <div className="lims-dropdown-item" onClick={() => handleDropdownAction('/pathologist/review')}>
                   Pending Reports Review List
                 </div>
@@ -286,14 +284,13 @@ function Navbar() {
               className={`lims-nav-link lims-dropdown-toggle ${location.pathname.startsWith('/reports') ? 'active-highlight' : ''}`}
               style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               onClick={() => toggleDropdown('reports')}
-              onMouseEnter={() => openDropdownOnHover('reports')}
             >
               Reports
               <ChevronDown size={14} style={{ transform: activeDropdown === 'reports' ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </button>
 
             {activeDropdown === 'reports' && (
-              <div className="lims-dropdown-menu" onMouseLeave={() => setActiveDropdown(null)}>
+              <div className="lims-dropdown-menu">
                 <div className="lims-dropdown-item" onClick={() => handleDropdownAction('/reports/daily_summary')}>
                   Daily Summary
                 </div>

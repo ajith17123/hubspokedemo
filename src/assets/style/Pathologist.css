@@ -5,11 +5,14 @@
 .path-container {
   padding: 1.5rem;
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   font-family: var(--font-sans);
   text-align: left;
   background-color: forestgreen;
   min-height: calc(100vh - 120px);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .path-header-banner {
@@ -24,6 +27,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  box-sizing: border-box;
 }
 
 .path-portal-title {
@@ -38,6 +42,9 @@
   gap: 0.5rem;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #e2e8f0;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .path-tab-btn {
@@ -48,8 +55,9 @@
   font-size: 13px;
   font-weight: 600;
   color: #475569;
-  cursor: pointer;
+  cursor: pointer !important;
   transition: all 0.15s;
+  white-space: nowrap;
 }
 
 .path-tab-btn.active {
@@ -64,6 +72,9 @@
   border-radius: 6px;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .path-report-preview {
@@ -73,4 +84,40 @@
   border-radius: 8px;
   font-family: var(--font-sans);
   color: #0f172a;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: auto;
 }
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .path-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .path-header-banner {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .path-report-preview {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .path-container {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .path-card {
+    padding: 0.75rem;
+  }
+
+  .path-tab-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 12px;
+  }
+}
+
