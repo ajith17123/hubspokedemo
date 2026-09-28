@@ -48,7 +48,7 @@ export default function ReportsSending({ onTriggerToast }) {
                 </span>
               </td>
               <td style={{ fontSize: '11px', color: '#475569', maxWidth: '300px' }}>
-                abc. City Diagnostic Centre: Dear {rep.patientName}, your report ({rep.reportId}) is ready. Download link: {window.location.origin}/#/report/{rep.reportId}
+                abc. xyz Diagnostic Centre: Dear {rep.patientName}, your report ({rep.reportId}) is ready. Download link: {window.location.origin}/#/report/{rep.reportId}
               </td>
               <td>{rep.smsSentAt || 'Just now'}</td>
               <td>

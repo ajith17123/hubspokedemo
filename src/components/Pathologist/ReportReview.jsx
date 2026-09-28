@@ -58,7 +58,7 @@ export default function ReportReview({ report, onBack, onTriggerToast }) {
         {/* Document Header */}
         <div style={{ textAlign: 'center', borderBottom: '2px solid #008744', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
           <h2 style={{ margin: 0, color: '#005a9e', fontSize: '20px', fontWeight: 'bold' }}>
-            abc. CITY DIAGNOSTIC CENTRE
+            abc. xyz DIAGNOSTIC CENTRE
           </h2>
           <div style={{ color: '#0070c0', fontWeight: 'bold', fontSize: '13px' }}>Vijayawada Main Center</div>
           <div style={{ color: '#475569', fontSize: '11px' }}>Department of Health, Medical & Family Welfare • abc. of Andhra Pradesh</div>

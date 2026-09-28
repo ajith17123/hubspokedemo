@@ -50,7 +50,7 @@ function DiagnosticsPdf({ order, onClose }) {
             <div className="diag-pdf-brand">
               <div>
                 <h2 style={{ margin: 0, fontSize: '1.2rem', color: '#0f172a' }}>
-                  abc. City Diagnostic Centre, Vijayawada
+                  abc. xyz Diagnostic Centre, Vijayawada
                 </h2>
                 <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
                   Hub & Spoke Laboratory Network • Phlebotomy Requisition Slip

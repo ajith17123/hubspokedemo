@@ -10,7 +10,7 @@ function Footer() {
             Department of Health, Medical & Family Welfare | abc of Andhra Pradesh
           </div>
           <div className="lims-footer-copy">
-            &copy; {new Date().getFullYear()} abc. City Diagnostic Centre (LIMS Network). All rights reserved.
+            &copy; {new Date().getFullYear()} abc. xyz Diagnostic Centre (LIMS Network). All rights reserved.
           </div>
         </div>
 

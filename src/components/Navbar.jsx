@@ -83,7 +83,7 @@ function Navbar() {
 
         {/* Center: Department & Diagnostic Center Titles */}
         <div className="lims-header-center">
-          <h1 className="lims-header-title">abc. CITY DIAGNOSTIC CENTRE</h1>
+          <h1 className="lims-header-title">abc. xyz DIAGNOSTIC CENTRE</h1>
           <div className="lims-header-city">Vijayawada</div>
           <div className="lims-header-dept">Department of Health, Medical & Family Welfare</div>
           <div className="lims-header-gov">abc of Andhra Pradesh</div>
