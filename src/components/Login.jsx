@@ -65,11 +65,11 @@ function Login() {
           <svg className="lims-login-seal" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="46" fill="#f8fafc" stroke="#008744" strokeWidth="4"/>
             <circle cx="50" cy="50" r="38" fill="none" stroke="#d97706" strokeWidth="2" strokeDasharray="4 2"/>
-            <path d="M50 20 L58 36 L76 38 L62 50 L66 68 L50 58 L34 68 L38 50 L24 38 L42 36 Z" fill="#008744" opaxyz="0.85"/>
+            <path d="M50 20 L58 36 L76 38 L62 50 L66 68 L50 58 L34 68 L38 50 L24 38 L42 36 Z" fill="#008744" opacity="0.85"/>
             <circle cx="50" cy="50" r="16" fill="#0070c0"/>
             <text x="50" y="54" fontSize="10" fill="#ffffff" textAnchor="middle" fontWeight="bold">AP</text>
           </svg>
-          <h2 className="lims-login-title">abc. xyz DIAGNOSTIC CENTRE</h2>
+          <h2 className="lims-login-title">ABC XYZ DIAGNOSTIC CENTRE</h2>
           <div className="lims-login-subtitle">Vijayawada</div>
           <div className="lims-login-dept">Department of Health, Medical & Family Welfare</div>
         </div>

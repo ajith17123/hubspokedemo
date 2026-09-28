@@ -31,7 +31,7 @@ export const sendSMSNotification = (report) => {
   const dateStr = `${now.toLocaleDateString('en-GB')} ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
 
   const secureLink = `${window.location.origin}/#/report/${report.reportId}`;
-  const smsBody = `Govt. City Diagnostic Centre, Vijayawada: Dear ${report.patientName}, your lab report (${report.reportId}) is ready. Download here: ${secureLink}`;
+  const smsBody = `ABC XYZ Diagnostic Centre, Vijayawada: Dear ${report.patientName}, your lab report (${report.reportId}) is ready. Download here: ${secureLink}`;
 
   const smsEntry = {
     smsId: `SMS-${Date.now().toString().slice(-5)}`,

@@ -33,7 +33,7 @@ function LabOrdersPrint({ selectedOrder, orders, onSelectOrder, onBackToSearch }
         <div className="diag-print-header">
           <div>
             <h2 style={{ margin: 0, fontSize: '1.35rem', color: '#0f172a' }}>
-              abc. xyz Diagnostic Centre, Vijayawada
+              ABC XYZ Diagnostic Centre, Vijayawada
             </h2>
             <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>
               Hub & Spoke Laboratory Network • Phlebotomy & Test Requisition Slip

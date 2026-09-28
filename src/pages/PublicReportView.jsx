@@ -59,10 +59,10 @@ export default function PublicReportView() {
       <div style={{ background: '#ffffff', border: '2px solid #cbd5e1', borderRadius: '8px', padding: '2rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
         <div style={{ textAlign: 'center', borderBottom: '2px solid #008744', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
           <h1 style={{ margin: 0, color: '#005a9e', fontSize: '22px', fontWeight: 'bold' }}>
-            abc. xyz DIAGNOSTIC CENTRE
+            ABC XYZ DIAGNOSTIC CENTRE
           </h1>
           <div style={{ color: '#0070c0', fontWeight: 'bold', fontSize: '14px' }}>Vijayawada Main Hub Laboratory</div>
-          <div style={{ color: '#475569', fontSize: '12px' }}>Department of Health, Medical & Family Welfare • Government of Andhra Pradesh</div>
+          <div style={{ color: '#475569', fontSize: '12px' }}>Department of Health, Medical & Family Welfare • ABC of Andhra Pradesh</div>
           <div style={{ fontSize: '13px', fontWeight: 'bold', color: '#008744', marginTop: '8px', letterSpacing: '0.5px' }}>
             PATIENT CLINICAL DIAGNOSTIC EVALUATION REPORT
           </div>
