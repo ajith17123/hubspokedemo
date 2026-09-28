@@ -69,7 +69,7 @@ function Login() {
             <circle cx="50" cy="50" r="16" fill="#0070c0"/>
             <text x="50" y="54" fontSize="10" fill="#ffffff" textAnchor="middle" fontWeight="bold">AP</text>
           </svg>
-          <h2 className="lims-login-title">GOVT. CITY DIAGNOSTIC CENTRE</h2>
+          <h2 className="lims-login-title">abc. CITY DIAGNOSTIC CENTRE</h2>
           <div className="lims-login-subtitle">Vijayawada</div>
           <div className="lims-login-dept">Department of Health, Medical & Family Welfare</div>
         </div>
